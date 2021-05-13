@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './Hero';
 import { HEROES } from './mock-heroes';
-
+import { Observable, of } from 'rxjs';
+import { MessageService } from './message.service';
 //The HeroService class is going to provide an injectable service,
 // and it can also have its own injected dependencies.
 //accepts a metadata object for the service, 
@@ -15,10 +16,20 @@ import { HEROES } from './mock-heroes';
 
 export class HeroService {
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   // get hero data from anywhere—a web service, local storage, or a mock data source.
-  getHeroes(): Hero[] {
-    return HEROES;
+  // getHeroes(): Hero[] {
+  //   console.log("ss4")
+  //   return HEROES;
+  // }
+  // getHeroes(): Observable<Hero[]> {
+  //   const heroes = of(HEROES);
+  //   return heroes;
+  // }
+  getHeroes(): Observable<Hero[]> {
+    const heroes = of(HEROES);
+    this.messageService.add('HeroService: fetched heroes');
+    return heroes;
   }
 }

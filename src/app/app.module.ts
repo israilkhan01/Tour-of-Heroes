@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './Components/heroes/heroes.component';
 import { HeroDetailComponent } from './Components/hero-detail/hero-detail.component';
+import { MessagesComponent } from './Components/messages/messages.component';
 
 
 // this ngModule decorator used to add critical metadata
@@ -12,7 +13,8 @@ import { HeroDetailComponent } from './Components/hero-detail/hero-detail.compon
   declarations: [  //declares all application components.
     AppComponent,
     HeroesComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    MessagesComponent
   ],
   imports: [     //list of external module that my app needs
     BrowserModule,
