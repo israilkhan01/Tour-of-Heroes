@@ -4,10 +4,11 @@
    </h1>
    <div class="flex">
     <div class="but active">
-      <a href="">DashBoard</a>
+      <a routerLink="/dashboard">Dashboard</a>
     </div>
-    <div class="but"> <a href="">Heroes</a></div>
+    <div class="but"> <a routerLink="/heroes">Heroes</a></div>
    </div>
 </div>
-<app-heroes></app-heroes>
+<router-outlet></router-outlet>
+<!-- <app-heroes></app-heroes> -->
 <app-messages></app-messages>

@@ -15,14 +15,10 @@
   <app-hero-detail [hero]="selectedHero"></app-hero-detail>
   <h2>My Heroes</h2>
   <!-- The *ngFor is Angular's repeater directive.  -->
-  <div class="listItems">
-    <ul class="heroes">
-        <li
-        *ngFor="let hero of heroes"
-        [class.selected]="hero === selectedHero"
-        (click)="onSelect(hero)">
-          <span class="badge">{{hero.id}}</span> {{hero.name}}
-        </li>
-      </ul>
-  </div>
-
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
+  </ul>

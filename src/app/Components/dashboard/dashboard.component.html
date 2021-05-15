@@ -1,0 +1,8 @@
+<h2>Top Heroes</h2>
+<!-- vfkn -->
+<div class="heroes-menu">
+    <a *ngFor="let hero of Topheroes"
+    routerLink="/detail/{{hero.id}}">
+    {{hero.name}}
+  </a>
+</div>
